@@ -1,28 +1,63 @@
-<ion-view view-title="Search" style="background: #4F5052">
+<ion-view view-title="Search" style="background: #ffffff color: #00BCD4">
   <ion-content>
-    <h1>  </h1>
+  <h1>  </h1>
 
-    <div class="bar bar-header item-input-inset" style="background: #4F5052">
-      <label class="item-input-wrapper">
-        <i class="icon ion-ios-search placeholder-icon"></i>
-        <input type="search" placeholder="Search/Filter" ng-model="search">
-      </label>
-    </div>
+  <div class="bar bar-header item-input-inset" style="background: #00BCD4">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+      <input type="search"
+             placeholder="Search/Filter"
+             ng-model="search">
+    </label>
+  </div>
 
-    <div class="item-input" ng-repeat="data in data | filter:search" ng-if="data.userId !== myID">
-      <div class="list card"style="margin:auto;">
-        <div class="item item-divider">{{data.inputTitle}}</div>
-<!--         <div class="item item-image"><img src="{{ data.imageUrl }}" alt=""></div> -->
-        <div class="item item-text-wrap"><b>Where</b>: {{data.address}}</div>
-        <div class="item item-text-wrap"><b>When</b>: {{data.datetimeValue}}</div>
-        <div class="item item-text-wrap"><b>How long</b>: {{data.duration}}</div>
-<!--         <div class="item item-text-wrap"><b>User ID</b>: {{data.userId}}</div> -->
-        <div><i class="button button-block ion-person-add" style="font-size:50; margin:auto; color:white" type="submit" ng-click="joinEvent(data.id)"></i></div>
-        <div><i class="button button-block ion-person-stalker" type="submit" style="margin:auto; color:white; background:#F0736A; border-color:white;" ng-click="showAttendees(data.id); showLists = ! showLists">
-        </i></div> 
-          <div class="allAttendees" ng-show="showLists" ng-repeat="user in users" style="background: white;"><a href="http://facebook.com/{{user.fbids}}" target="_blank"><img src="http://graph.facebook.com/{{user.fbid}}/picture"></a><span class="attendeeName">{{user.name}}</span></div>
-      </div>
-    </div>
+  <div class="item-input"
+       ng-repeat="data in data | filter:search"
+       ng-if="data.userId !== myID">
 
-  </ion-content>
+  <div class="list card"
+       style="margin:auto;">
+
+  <div class="item item-divider">{{data.inputTitle}}</div>
+  <!-- <div class="item item-image"><img src="{{ data.imageUrl }}" alt=""></div> -->
+
+  <div class="item item-text-wrap"><b>Where</b>: {{data.address}}</div>
+
+  <div class="item item-text-wrap"><b>When</b>: {{data.datetimeValue}}</div>
+
+  <div class="item item-text-wrap"><b>How long</b>: {{data.duration}}</div>
+
+  <!--<div class="item item-text-wrap"><b>User ID</b>: {{data.userId}}</div> -->
+
+  <div><i class="button button-block ion-person-add"
+          ng-click="joinEvent(data.id)"
+          style="font-size:50;
+                 margin:auto;
+                 color:#ffffff"
+          type="submit"></i></div>
+
+  <div><i class="button button-block ion-person-stalker"
+          ng-click="showAttendees(data.id); showLists = ! showLists"
+          type="submit"
+          style="margin:auto;
+                 color:#ffffff;
+                 background:#00BCD4;
+                 border-color:#ffffff;"></i></div>
+
+  <div class="allAttendees"
+       ng-show="showLists"
+       ng-repeat="user in users"
+       style="background: #ffffff;">
+
+     <a href="http://faceboo.com/{{user.fbids}}" target="_blank">
+         <img src="http://graph.facebook.com/{{user.fbid}}/picture">
+      </a>
+
+    <span class="attendeeName">{{user.name}}</span>
+  </div>
+
+</div>
+</div>
+
+</ion-content>
 </ion-view>
