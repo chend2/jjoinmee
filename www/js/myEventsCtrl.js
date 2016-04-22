@@ -33,6 +33,7 @@ angular.module('jauntly.myEventsCtrl', [])
               }
             }
           }
+          console.log('$filtered, id', $scope.id, $scope.filtered)
         })
       })
     })

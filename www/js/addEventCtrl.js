@@ -12,21 +12,20 @@ angular.module('jauntly.addEventCtrl', [])
     ExpediaInfo.getExpInfo(location, activity)
     .then(function (results) {
       $scope.results = results.data.activities;
-      console.log($scope.results) // attributes of activities
     })
     .catch(function (error) {
       console.error(error);
     });
   };
 
-  $scope.clickInfo = function (result) {
-    $scope.inputTitle = result.title;
-    $scope.inputAddress = result.latLng;
-    $scope.duration = result.duration;
-    $scope.imageUrl = result.imageUrl;
-    $scope.latLng = result.latLng;
-    $scope.coordinates = "[" + result.latLng + "]";
-  };
+  // $scope.clickInfo = function (result) {
+  //   $scope.inputTitle = result.title;
+  //   $scope.inputAddress = result.latLng;
+  //   $scope.duration = result.duration;
+  //   $scope.imageUrl = result.imageUrl;
+  //   $scope.latLng = result.latLng;
+  //   $scope.coordinates = "[" + result.latLng + "]";
+  // };
 
   $scope.getAddress = function (latlng) {
     GoogleGeocodeInfo.getAddress(latlng)
@@ -35,16 +34,14 @@ angular.module('jauntly.addEventCtrl', [])
     })
   };
 
-  $scope.getDateTime = function () {
-    $scope.datetimeValue = new Date();
-  };
+  // $scope.getDateTime = function () {
+  //   $scope.datetimeValue = new Date();
+  // };
 
   $scope.postEvent = function (inputTitle, address, datetimeValue, duration, imageUrl) {
-    console.log(inputTitle, address, datetimeValue, duration, imageUrl,"hello", $scope.email)
 
     Event.submitEvent({inputTitle: inputTitle, address: address, datetimeValue: datetimeValue, duration: duration, Email: $scope.email})
       .then(function() {
-        console.log('in addEventCtrl event added')
         $scope.inputTitle = null;
         $scope.duration = null;
         $scope.imageUrl = null;
