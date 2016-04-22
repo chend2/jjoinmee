@@ -1,4 +1,8 @@
 /* Empty. Add your own CSS if you like */
+body,html{
+	font-family: 'Droid Sans'
+}
+
 h1 {
   padding-left: 5%;
 }
@@ -20,4 +24,6 @@ h1 {
 .attendeeName {
 	padding: 20px;
 	text-align: top;
+
 }
+

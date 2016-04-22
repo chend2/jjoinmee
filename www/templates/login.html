@@ -1,20 +1,45 @@
-<ion-view title="Login/Logout" hide-back-button="true" style="background: #4F5052">
-  <ion-content>
-      <h1> </h1>
+<ion-view title="Login/Logout" hide-back-button="true" style="background: #FAFAFA">
 
-      <div ng-hide="isLoggedIn" class="card" ng-click="login()">
-        <button class="item" style="text-align:left; background:#F0736A; color:white;">
-          Log In with Facebook
-        </button>
-      </div>
-      <div class="card" ng-show="isLoggedIn">
-        <div class="item item-text-wrap" style="background:#F0736A; color:white;">
-          Welcome {{ displayName }}!
-        </div>
-        <button class="item" style="text-align:left; background:#F0736A; color:white;" ng-click="logout()">
-          Log Out
-        </button>
-      </div>
+<ion-content>
+<h1> </h1>
 
-    </ion-content>
+  <div ng-hide="isLoggedIn"
+       ng-click="login()">
+
+    <button class="item"
+            style="text-align:center;
+                   border:medium solid #00BCD4;                   
+                   color:#00BCD4;
+                   width: 150px;
+                   height: 160px;
+                   margin: auto;
+                   margin-top: 100px;
+                   border-radius: 5px;
+                   font-size:20px;
+                   font-weight: bold"
+                   ><i class="ion-social-facebook" style="font-size:70px"></i>
+                   <br>Log In
+    </button>
+
+  </div>
+
+  <div ng-show="isLoggedIn">
+    <div class="item item-text-wrap"
+         style="background:#FAFAFA;
+                width: 200px;
+                border: none;
+                margin: auto;
+                color:#00BCD4;">Welcome {{ displayName }}! </div>
+
+    <button class="item"
+            ng-click="logout()"
+            style="text-align:left;
+                   background:#00BCD4;
+                   border: none; 
+                   border-radius: 5px; 
+                   margin: auto; 
+                   color:#fff;">Log Out</button>
+  </div>
+
+</ion-content>
 </ion-view>
